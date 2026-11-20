@@ -1,0 +1,15 @@
+# Ignore raw PDF source files (Decision: keep large binary files out of git)
+raw/*.pdf
+
+# Temporary and mutation test files
+scratch/
+temp/
+*.tmp
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+Thumbs.db
