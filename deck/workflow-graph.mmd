@@ -1,0 +1,16 @@
+﻿flowchart TD
+    A[1. 讀 wiki、擬大綱<br/>10–12 頁，每頁學習目標＋來源 wiki 頁] --> B{2. 人工檢查<br/>大綱確認}
+    B -- 不通過 --> A
+    B -- 通過 --> C[3. 逐頁寫 deck/slides.md<br/>每個事實與數字附來源與標籤]
+    C --> D{4. 腳本檢查<br/>check_deck.py：簡報對 wiki}
+    D -- 通過 --> E{5. AI 審查<br/>有無跨設定比較、排名、wiki 外結論}
+    D -- 失敗 --> F{6. 錯在哪一層？}
+    E -- 有問題 --> F
+    F -- 錯在簡報 --> C
+    F -- 錯在 wiki --> G[退回 wiki 層<br/>修 wiki → run_checks.py --final → commit]
+    G --> C
+    E -- 通過 --> H[7. build_deck.py 組成單檔 deck/index.html<br/>腳本轉換，不經 AI]
+    H --> I{8. 腳本＋人工檢查<br/>單檔、無外部資源、頁數；瀏覽器逐頁看}
+    I -- 失敗 --> F
+    I -- 通過 --> J[9. 產出執行檢查報告]
+    L[["煞車：3→4→5 迴圈最多 3 輪<br/>第 3 輪仍失敗就停，由使用者決定<br/>完成由腳本判定，不由 AI 宣告"]]
