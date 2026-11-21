@@ -10,3 +10,13 @@
 - wiki/entities/fau-aibo.md
 - wiki/index.md
 - wiki/log.md
+
+## [2026-11-21] ingest | 2021-pepino-wav2vec2-ser（wav2vec 2.0 SER）
+- wiki/papers/2021-pepino-wav2vec2-ser.md
+- wiki/entities/emo-db.md
+- wiki/entities/pitch.md
+- wiki/index.md
+- wiki/log.md
+
+## [2026-11-21] update | 2008-fau-aibo 提及實體清單回補連結（emo-db、pitch 因第 2 篇達建頁門檻）
+- wiki/papers/2008-fau-aibo.md

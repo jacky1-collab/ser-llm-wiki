@@ -155,11 +155,11 @@ one_sentence_summary: "介紹 FAU Aibo Emotion Corpus：德國兒童與 Sony Aib
 - AMEN 子集（未達建頁門檻）
 - 多數決（majority voting, MV）（未達建頁門檻）
 - 加權 kappa（weighted kappa）（未達建頁門檻）
-- Emo-DB（未達建頁門檻）
+- [[emo-db]]
 - DES（未達建頁門檻）
 - 綠野仙蹤法（Wizard-of-Oz）（未達建頁門檻）
 - 兒童語音（children's speech）（未達建頁門檻）
-- 音高（pitch）與音高偵測演算法（PDA）（未達建頁門檻）
+- [[pitch]]（另提及音高偵測演算法（PDA），未達建頁門檻）
 - two-fold cross-validation（未達建頁門檻）
 - 以詞為單位的情緒標註（word-based annotation）（未達建頁門檻）
 - chunk（未達建頁門檻）
