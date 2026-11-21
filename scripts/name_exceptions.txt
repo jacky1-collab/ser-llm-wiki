@@ -19,3 +19,12 @@ MFCC 15
 MFCC 21
 Non-rigid P 8
 Non-rigid P 22
+facebook/w2v-bert-2.0
+facebook/hubert-large-ll60k
+m-a-p/MERT-v1-330M
+openai/whisper-large-v2
+openai/whisper-large-v3
+Whisper-Large-v2
+Whisper-Large-v3
+MERT v1 330M
+w2v-bert-2.0

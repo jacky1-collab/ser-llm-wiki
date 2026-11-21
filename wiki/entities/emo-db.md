@@ -1,7 +1,7 @@
 ---
 name: "Emo-DB"
 type: dataset
-sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser"]
+sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser", "2024-ser-evals"]
 core_contribution_of: ""
 ---
 
@@ -27,10 +27,12 @@ core_contribution_of: ""
 - [[2008-fau-aibo]]：作為「已有可取得的演出資料庫、卻沒有條件相近的自發資料庫」的對照例 [[2008-fau-aibo]] (p. 1)；並指出即使在 Emo-DB 這類資料庫上，研究者也常未選用完全相同的樣本，使跨研究比較不可能 [[2008-fau-aibo]] (p. 4)。
 > "researchers often do not select exactly the same cases per class" [[2008-fau-aibo]] (p. 4)
 - [[2021-pepino-wav2vec2-ser]]：僅在引言中列為訓練與評估情緒辨識模型的資料集之一，未用於該篇實驗 [[2021-pepino-wav2vec2-ser]] (p. 1)。
-- 兩篇皆未報告在 Emo-DB 上的實驗數據。
+- [[2024-ser-evals]]：列為基準資料集之一（德語）；類別對應後為 6 類 [本文] [[2024-ser-evals]] (p. 1, Table 1)、10 位說話者 [本文] [[2024-ser-evals]] (p. 1, Table 1)、535 個樣本 [本文] [[2024-ser-evals]] (p. 1, Table 1)，平均長度 2.8 秒 [本文] [[2024-ser-evals]] (p. 1, Table 1)；不具域外資格，只用於域內測試 [[2024-ser-evals]] (p. 1, Table 1)、[[2024-ser-evals]] (p. 3)。該篇只報告跨資料集彙總指標，未列出 Emo-DB 單一資料集的結果 [[2024-ser-evals]] (p. 4, Table 3)。
+> "A database of german emotional speech." [[2024-ser-evals]] (p. 5)
+- [[2008-fau-aibo]] 與 [[2021-pepino-wav2vec2-ser]] 皆未報告 Emo-DB 的統計或實驗數據，因此三篇之間沒有可對照的數字。
 
 ## 相關實體（Related Entities）
 無（其他相關資料集目前皆未達建頁門檻）。
 
 ## 矛盾／待釐清
-無（兩篇只有名稱寫法不同：Emo-DB 與 EMODB，引用文獻相同）。
+無（三篇只有名稱寫法不同：Emo-DB、EMODB、EmoDB／EmoDBDataset，引用文獻皆為 Burkhardt 等人的「A database of german emotional speech」）。

@@ -167,21 +167,21 @@ one_sentence_summary: "以預訓練自監督語音模型各層輸出的可訓練
 ## 提及實體清單（Referenced Entities）
 - [[emo-db]]（本篇寫作 EMODB）
 - [[pitch]]
-- wav2vec 2.0（未達建頁門檻）
+- [[wav2vec2]]
 - Wav2vec2-PT／Wav2vec2-FT（未達建頁門檻）
-- IEMOCAP（未達建頁門檻）
+- [[iemocap]]
 - RAVDESS（未達建頁門檻）
 - eGeMAPS（未達建頁門檻）
 - 頻譜圖（spectrogram）（未達建頁門檻）
 - 各類平均召回率（average recall）（未達建頁門檻）
 - 說話者正規化／全域正規化（未達建頁門檻）
 - 遷移學習（transfer learning）（未達建頁門檻）
-- 自監督學習（self-supervised learning）（未達建頁門檻）
+- [[self-supervised-learning]]
 - LibriSpeech（未達建頁門檻）
 - Dense／LSTM／Fusion 下游模型（未達建頁門檻）
 - CTC（未達建頁門檻）
 - SAVEE（未達建頁門檻）
-- MSP-Podcast（未達建頁門檻）
+- [[msp-podcast]]
 - 多數決（majority voting）（未達建頁門檻）
 - 交叉驗證（cross-validation）（未達建頁門檻）
 

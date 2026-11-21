@@ -31,3 +31,17 @@
 ## [2026-11-21] update | 因第 3 篇回補連結與來源（children-emotion-recognition 達建頁門檻；pitch 新增來源）
 - wiki/papers/2008-fau-aibo.md
 - wiki/entities/pitch.md
+
+## [2026-11-21] ingest | 2024-ser-evals（SER Evals）
+- wiki/papers/2024-ser-evals.md
+- wiki/entities/ser-evals.md
+- wiki/entities/wav2vec2.md
+- wiki/entities/iemocap.md
+- wiki/entities/msp-podcast.md
+- wiki/entities/self-supervised-learning.md
+- wiki/index.md
+- wiki/log.md
+
+## [2026-11-21] update | 因第 4 篇回補連結與來源（wav2vec2、iemocap、msp-podcast、self-supervised-learning 達建頁門檻；emo-db 新增來源）
+- wiki/papers/2021-pepino-wav2vec2-ser.md
+- wiki/entities/emo-db.md
