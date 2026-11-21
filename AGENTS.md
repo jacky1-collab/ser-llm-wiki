@@ -54,7 +54,7 @@
      3. 檔名與連結（如 `[[slug]]`）
      4. 章節編號（如 `3.1`、`第 1 節`）
      5. 引用內的 Table／Fig 編號（如 `Table M`、`Fig. M`）
-     6. 模型／資料集／指標名稱裡的數字（如 F0、X2Y 等代號或佔位符）
+     6. 模型／資料集／特徵／指標名稱裡的數字（如 F0、X2Y 等代號或佔位符）；名稱清單不得加入會出現在檔名（slug）中的字串（如 `wav2vec2`），以免破壞 `[[slug]]` 連結的例外判定
      7. 清單編號與標題編號（如 `1.`、`2.`、`## 1.`）
      8. 「基本資訊」區塊
    - 「核心貢獻與作者觀點」區塊：每個條列開頭必須嚴格標記 `[作者聲稱]` 或 `[AI 整理，待核對]`。
@@ -82,10 +82,18 @@ LLM wiki/
 │   ├── run_checks.py         # 合併執行上述兩支檢查
 │   ├── test_normalization.py # 比對函式單元測試
 │   ├── run_mutation_tests.py # 變異測試（於 temp/ 副本執行）
+│   ├── check_deck.py         # 簡報對 wiki 的檢查
+│   ├── build_deck.py         # slides.md → 單檔 HTML（不經 AI）
+│   ├── test_check_deck.py    # check_deck／build_deck 案例測試
 │   ├── number_waivers.txt    # 數字豁免清單（僅使用者可編輯）
 │   ├── name_exceptions.txt   # 例外 6 名稱清單（僅使用者可編輯）
 │   └── fixtures/             # 測試用假資料，非論文內容
-└── deck/                     # 下游教學簡報產出（單檔 HTML、講稿、證據卡）
+└── deck/                     # 下游教學簡報
+    ├── slides.md             # 簡報原稿
+    ├── index.html            # 由 build_deck.py 產生，不可手改
+    ├── check-log.md          # 執行檢查紀錄
+    ├── workflow-graph.png    # 簡報流程圖
+    └── workflow-graph.mmd    # 簡報流程圖（Mermaid 原始檔）
 ```
 
 - **檔名禁小數點**：實體檔名一律為英文小寫加連字號，嚴禁包含小數點（如 `wav2vec2.md`，不可為 `wav2vec-2.0.md`）。
@@ -161,6 +169,7 @@ LLM wiki/
    8. **完整回報**：條列新增與修改檔案清單、貼出腳本完整輸出、提供 `git diff` 摘要。**嚴禁僅回覆「完成」**。
 3. **更新舊頁面規範**：
    - 後續論文與先前頁面有衝突或補充時，允許修改舊論文頁或實體頁，但**僅限改動「矛盾／待釐清」、「在各論文中的應用與實驗表現」或「提及實體清單」（實體建頁後回補雙向連結）**區塊。
+   - **例外**：因下游（如簡報）需要補記原文引文時，可在舊論文頁的任何既有章節「新增」引文，不得改寫或刪除既有內容。
    - 必須同步在 `wiki/log.md` 追加 `update` 記錄，寫明修改頁面與原因。
 
 ---
@@ -237,7 +246,8 @@ LLM wiki/
    - 故意放錯測試**必須在臨時副本（如 `temp/`）上執行**，驗證腳本能否抓出錯誤，嚴禁污染正式 Wiki。
 4. **執行方式**：
    - 每次 Ingest 後執行 `python scripts/run_checks.py`（合併兩支檢查）；5 篇全部完工時加 `--final`。
-   - 修改任何腳本後，必須執行 `python scripts/test_normalization.py` 與 `python scripts/run_mutation_tests.py`，全數通過才算完成。
+   - 修改任何腳本後，必須執行 `python scripts/test_normalization.py`、`python scripts/run_mutation_tests.py` 與 `python scripts/test_check_deck.py`，全數通過才算完成。
+   - `check_deck.py` 結束碼：0 通過、1 失敗、2 無法判斷。
 5. **使用者專用清單**：`scripts/number_waivers.txt` 與 `scripts/name_exceptions.txt` 只有使用者可以編輯，AI 不得新增或修改。遇到名稱含數字（如模型名）的失敗，AI 只能回報，由使用者決定是否加入。
 6. **Commit 門禁**：提交前必須執行腳本，確認全數通過才可 Commit。
 
@@ -245,14 +255,20 @@ LLM wiki/
 
 ## 12. 下游簡報產出（`deck/`）與兩層溯源體系
 
-1. **簡報規格**：
-   - 單一檔案 HTML（內嵌 CSS/JS、鍵盤左右鍵翻頁），8–15 頁（目標 10–12 頁，無溢出）。
-   - 教學順序：什麼是 SER → 情緒怎麼定義 → 資料集 → 特徵 → 模型 → 怎麼評估 → 兒童挑戰。
+1. **簡報流程（9 個節點）**：
+   1. 擬大綱 → 2. 人工確認大綱 → 3. 寫 `deck/slides.md` → 4. `check_deck.py` → 5. AI 審查（跨設定比較、排名暗示、wiki 外說法）→ 6. 判斷錯在哪一層（簡報／wiki）→ 7. `build_deck.py` → 8. `check_deck.py --html deck/index.html`＋瀏覽器人工檢查 → 9. 執行檢查報告（`deck/check-log.md`）。
+   - 3→4→5 迴圈最多 3 輪；第 3 輪仍失敗就停，由使用者決定。「完成」由腳本判定，不由 AI 宣告。
+   - 每一輪記入 `check-log.md`：輪次、執行的檢查、失敗項目原文、怎麼修、誰發現（腳本／AI 審查／人工）。
 2. **兩層溯源與退回機制**：
-   - **簡報階段只讀取 `wiki/`**，不得直接讀取 `raw/`。
-   - 投影片頁尾標註對應之 Wiki 頁面與原論文頁碼。
-   - 簡報若發現數字或內容錯誤，**必須退回「Wiki 對 PDF」那一層修正**，不可在簡報單獨打補丁。
-   - 證據卡純度：一張證據卡只能引用一個 Wiki 頁面。
+   - **簡報只讀取 `wiki/`**，不得讀取 `raw/`，不得加入 wiki 以外的說法。
+   - 錯在 wiki 時，**退回 wiki 層修正**，`run_checks.py --final` 通過並 commit 後再回簡報；不可在簡報單獨打補丁。
+3. **簡報規則**：
+   - 10–12 頁；每頁第一行為 `# 標題`，標題不得含數字。
+   - 數字須照 wiki 論文頁的「數字＋標籤＋頁碼」寫法，並加 `[[論文slug]]`。
+   - 引文須出現在對應論文頁的引文中。
+   - 跨論文數字並列時，同頁寫明「**設定不同，不可直接比較**」與差在哪。
+   - 只用 `build_deck.py` 支援的語法：`#` 標題、段落、`-` 條列、`>` 引文、Markdown 表格、`**粗體**`。
+   - `index.html` 只能由 `build_deck.py` 產生（單一檔案、無外部資源），不可手改。
 
 ---
 
