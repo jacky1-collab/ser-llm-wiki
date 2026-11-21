@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SER 簡報</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:#f4f4f2;color:#1d1d1f}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 96px}
+.slide{display:none;background:#fff;border-radius:12px;padding:32px 40px;min-height:70vh;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.slide.active{display:block}
+h1{font-size:1.9rem;margin:0 0 1rem}
+h2{font-size:1.4rem}
+p,li{font-size:1.15rem;line-height:1.7}
+blockquote{margin:1rem 0;padding:.5rem 1rem;border-left:4px solid #888;background:#f7f7f7;font-style:italic}
+table{border-collapse:collapse;margin:1rem 0;font-size:1rem}
+th,td{border:1px solid #bbb;padding:.4rem .7rem;text-align:left}
+th{background:#eee}
+.src{color:#666;font-size:.9em}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;align-items:center;gap:16px;padding:12px;background:#fff;border-top:1px solid #ddd}
+button{font-size:1rem;padding:.4rem 1rem;cursor:pointer}
+@media print{nav{display:none}.slide{display:block;page-break-after:always;box-shadow:none}}
+</style>
+</head>
+<body>
+<main id="deck">
+<section class="slide">
+<h1>開場：這份簡報要帶你看什麼</h1>
+<p>本簡報的內容全部整理自本 wiki 的五篇論文頁、實體頁與綜合頁，不加入 wiki 以外的資訊。</p>
+<ul><li>主題：語音情緒辨識（SER），特別是兒童的語音情緒辨識。</li><li>路線：概念 → 資料集 → 評測 → 特徵與模型 → 成人與兒童 → 開放問題。</li><li>五個綜合頁：<span class="src">〔來源：datasets-comparison〕</span>、<span class="src">〔來源：benchmark-matrix〕</span>、<span class="src">〔來源：adult-vs-child-ser〕</span>、<span class="src">〔來源：architecture-evolution〕</span>、<span class="src">〔來源：open-challenges〕</span>。</li></ul>
+<p><strong>怎麼讀這份簡報</strong></p>
+<ul><li>[本文]＝該論文自己的結果；[引述]＝該論文轉述別人的結果。</li><li>〔來源：…〕＝本 wiki 的頁面；(p. N)＝原始 PDF 的頁碼。</li></ul>
+</section>
+<section class="slide">
+<h1>什麼是語音情緒辨識</h1>
+<ul><li>自動情緒辨識是社交機器人、情感感知人機互動設計與情感感知家教系統的核心技術 <span class="src">〔來源：2016-emoreact〕</span> (p. 1)。</li><li>綜述指出 SER 的應用領域包括人機互動、情感運算與心理健康：</li></ul>
+<blockquote>"Speech emotion recognition (SER) has become an important area of research due to its wide applications in human-computer interaction, affective computing, and mental health." <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 1)</blockquote>
+<ul><li>現有 SER 研究大多集中於成人，兒童受到的關注有限 <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 1)。</li><li>情緒資料集通常不大，使深度學習難以應用：</li></ul>
+<blockquote>"Emotion recognition datasets are relatively small, making the use of deep learning techniques challenging." <span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span> (p. 1)</blockquote>
+</section>
+<section class="slide">
+<h1>兒童語音情緒辨識為什麼難</h1>
+<ul><li>兒童較成人更常扭動、移動，造成遮擋與非正面頭部姿勢：</li></ul>
+<blockquote>"children tend to fidget and move around more than adults, leading to more self-occlusions and non-frontal head poses" <span class="src">〔來源：2016-emoreact〕</span> (p. 1)</blockquote>
+<ul><li>綜述歸納的挑戰：音高、音色、音量差異，常見發音錯誤與不完整句子，以及強烈的說話者依賴性 <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 2)。</li><li>資料集數量：綜述稱成人有 15 個 [本文] <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 21) 資料集，兒童只有 7 個 [本文] <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 21)。註：綜述 Table 2 實際列出的成人資料集數量少於此數（見 <span class="src">〔來源：2026-review-ser-adults-children〕</span> 的「矛盾／待釐清」）。</li></ul>
+</section>
+<section class="slide">
+<h1>兩個兒童資料集：FAU Aibo 與 EmoReact</h1>
+<ul><li><strong>FAU Aibo</strong>：德國兒童與 Aibo 機器人自發互動的語音資料庫，只有語音，以詞為單位標註；共 51 位兒童 [本文] <span class="src">〔來源：2008-fau-aibo〕</span> (p. 1)。見 <span class="src">〔來源：fau-aibo〕</span>。</li><li><strong>EmoReact</strong>：YouTube 反應影片的兒童視聽資料集，以片段為單位、可多標籤；共 63 位兒童 [本文] <span class="src">〔來源：2016-emoreact〕</span> (p. 3)，標籤 17 種 [本文] <span class="src">〔來源：2016-emoreact〕</span> (p. 2)。見 <span class="src">〔來源：emoreact〕</span>。</li><li><strong>設定不同，不可直接比較</strong>：兩者的語言情境、蒐集方式（機器人互動 vs. YouTube 影片）、模態（只有語音 vs. 視聽）與標註單位（詞 vs. 片段）都不同 <span class="src">〔來源：children-emotion-recognition〕</span>。</li></ul>
+</section>
+<section class="slide">
+<h1>資料集全景：成人資料集與統計口徑</h1>
+<ul><li>綜述把 IEMOCAP、RAVDESS、Emo-DB、SAVEE、MELD 等歸為成人資料集 <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 7, Table 2)。見 <span class="src">〔來源：iemocap〕</span>、<span class="src">〔來源：ravdess〕</span>、<span class="src">〔來源：emo-db〕</span>、<span class="src">〔來源：savee〕</span>、<span class="src">〔來源：meld〕</span>。</li><li>同一個資料集在不同論文中的規模，計數單位常不同：詞、片段、utterances，或類別對應後的樣本數 <span class="src">〔來源：datasets-comparison〕</span>。</li><li><span class="src">〔來源：2024-ser-evals〕</span> 的資料集數字是類別對應後的統計，綜述則是轉述原始文獻，所以兩者的數字不能直接相比 <span class="src">〔來源：datasets-comparison〕</span>。</li></ul>
+</section>
+<section class="slide">
+<h1>評測為什麼不能直接比</h1>
+<ul><li><span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span>：IEMOCAP 每折留出一個 session、RAVDESS 依演員切分；指標是各類平均召回率（average recall）。</li><li><span class="src">〔來源：2016-emoreact〕</span>：person-independent 的訓練、驗證、測試切分；指標是 AUC ROC 與 skew normalized F1。</li><li><span class="src">〔來源：2024-ser-evals〕</span>：各資料集內切分做域內評估，資料集之間做 zero-shot 域外評估；指標是 macro-averaged F1。</li><li><span class="src">〔來源：2026-review-ser-adults-children〕</span>：沒有自研實驗，只轉述各研究的結果，切分與指標各不相同。</li><li><strong>設定不同，不可直接比較</strong>：差在資料集、切分、指標與族群（兒童 vs. 成人）。各篇指標名稱不同，本 wiki 不判定是否為同一指標 <span class="src">〔來源：benchmark-matrix〕</span>。</li></ul>
+</section>
+<section class="slide">
+<h1>特徵與模型做法</h1>
+<ul><li>手工特徵：<span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span> 以 eGeMAPS 與頻譜圖為基線；<span class="src">〔來源：2016-emoreact〕</span> 以 OpenFace 與 COVAREP 擷取特徵；綜述稱 MFCC 是最常用的特徵 <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 6)。</li><li>自監督表徵【可比較：同篇同協定】：IEMOCAP 上 Wav2vec2-PT 為 67.2 [本文] <span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span> (p. 3, Table 1)，Wav2vec2-FT 為 63.8 [本文] <span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span> (p. 3, Table 1)（各類平均召回率）。</li><li>ASR 模型【可比較：同篇同協定】：域外平均 Whisper-Large-v2 為 0.194250 [本文] <span class="src">〔來源：2024-ser-evals〕</span> (p. 4, Table 3)，WavLM-Large 為 0.161098 [本文] <span class="src">〔來源：2024-ser-evals〕</span> (p. 4, Table 3)（macro-averaged F1）。</li><li><strong>設定不同，不可直接比較</strong>：<span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span> 發現微調做 ASR 的模型較差，<span class="src">〔來源：2024-ser-evals〕</span> 發現以 ASR 為主要目的的 Whisper 較好；兩篇比較的對象、資料集、切分與指標都不同 <span class="src">〔來源：architecture-evolution〕</span>。本頁兩篇的數字也不可互相比較（指標分別為各類平均召回率與 macro-averaged F1）。</li></ul>
+</section>
+<section class="slide">
+<h1>成人與兒童：論文怎麼說它們的差異</h1>
+<p>FAU Aibo 論文：沒有跡象顯示兒童的行為與成人有根本差異。</p>
+<blockquote>"there is no indication that they behaved differently from adults in a fundamental way" <span class="src">〔來源：2008-fau-aibo〕</span> (p. 2)</blockquote>
+<p>EmoReact 論文：兒童比成人動得更多，使臉部與身體追蹤更困難。</p>
+<blockquote>"Children move more compared to adults, which makes it challenging to successfully track their face and body gestures." <span class="src">〔來源：2016-emoreact〕</span> (p. 2)</blockquote>
+<p>綜述：兒童的情緒範圍較窄且變異較大，受年齡、語言發展與文化影響。</p>
+<blockquote>"children display a narrower and more variable range of emotions, shaped by age, linguistic development, and cultural context" <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 2)</blockquote>
+<ul><li>三篇的依據與面向不同，本簡報不選邊 <span class="src">〔來源：adult-vs-child-ser〕</span>。</li></ul>
+</section>
+<section class="slide">
+<h1>綜述和原始論文不一致的地方</h1>
+<ul><li>EmoReact 的標籤數：綜述寫 15 [引述] <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 9, Table 3) 種；原始論文為 17 種 [本文] <span class="src">〔來源：2016-emoreact〕</span> (p. 2)。</li><li>FAU Aibo 的規模：綜述寫 17074 [引述] <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 9, Table 3) utterances；原始論文的全部詞數為 48401 [本文] <span class="src">〔來源：2008-fau-aibo〕</span> (p. 2)。</li><li><strong>兩篇描述不同，不可直接比較</strong>：綜述轉述的來源與原始論文不同、計數單位不同。</li><li>綜述還把 EmoReact 標為 Rajan 等人的文獻，而該文獻標題是另一個語料庫（TaMaR-EmoDB）（見 <span class="src">〔來源：emoreact〕</span>）。</li><li>學習重點：二手綜述的數字要回到原始論文核對。</li></ul>
+</section>
+<section class="slide">
+<h1>開放問題</h1>
+<ul><li>兒童資料稀缺，隱私與同意也讓資料難以釋出或標準化 <span class="src">〔來源：open-challenges〕</span>。</li><li>標註一致性：<span class="src">〔來源：2016-emoreact〕</span> 的 Attentiveness 一致性為 -0.16 [本文] <span class="src">〔來源：2016-emoreact〕</span> (p. 3)；<span class="src">〔來源：2008-fau-aibo〕</span> 的 AMEN 子集加權 kappa 為 0.59 [本文] <span class="src">〔來源：2008-fau-aibo〕</span> (p. 2)。<strong>設定不同，不可直接比較</strong>：差在一致性指標（Krippendorff's alpha vs. 加權 kappa）與計算單位（各標籤 vs. 子集整體）。</li><li>泛化：表現依訓練與測試組合變動很大，模型穩健性仍是挑戰 <span class="src">〔來源：2024-ser-evals〕</span> (p. 4)。</li><li>原始波形建模與自監督學習在兒童 SER 的應用仍有限 <span class="src">〔來源：2026-review-ser-adults-children〕</span> (p. 22)。</li></ul>
+</section>
+<section class="slide">
+<h1>結論</h1>
+<ul><li>兒童語音情緒辨識資料少、挑戰多，研究仍以成人為主 <span class="src">〔來源：adult-vs-child-ser〕</span>。</li><li>跨論文的數字因資料集、切分、指標與族群不同，不能直接比較 <span class="src">〔來源：benchmark-matrix〕</span>。</li><li>二手綜述的描述可能與原始論文不同，引用時要回原始論文核對 <span class="src">〔來源：datasets-comparison〕</span>。</li></ul>
+</section>
+<section class="slide">
+<h1>參考來源</h1>
+<ul><li><span class="src">〔來源：2008-fau-aibo〕</span>：FAU Aibo 兒童情緒語音資料庫的介紹論文。</li><li><span class="src">〔來源：2016-emoreact〕</span>：EmoReact 兒童視聽情緒資料集與基線。</li><li><span class="src">〔來源：2021-pepino-wav2vec2-ser〕</span>：以自監督語音模型的多層表徵做語音情緒辨識。</li><li><span class="src">〔來源：2024-ser-evals〕</span>：多語言域內與域外的語音情緒辨識基準。</li><li><span class="src">〔來源：2026-review-ser-adults-children〕</span>：成人與兒童語音情緒辨識綜述。</li><li>綜合頁：<span class="src">〔來源：datasets-comparison〕</span>、<span class="src">〔來源：benchmark-matrix〕</span>、<span class="src">〔來源：adult-vs-child-ser〕</span>、<span class="src">〔來源：architecture-evolution〕</span>、<span class="src">〔來源：open-challenges〕</span>。</li></ul>
+</section>
+</main>
+<nav><button id="prev" type="button">上一頁</button><span id="pager"></span><button id="next" type="button">下一頁</button></nav>
+<script>
+(function(){
+  var slides = document.querySelectorAll('section.slide');
+  var pager = document.getElementById('pager');
+  var i = 0;
+  function show(k){
+    if (k < 0 || k >= slides.length) return;
+    slides[i].classList.remove('active');
+    i = k;
+    slides[i].classList.add('active');
+    pager.textContent = '\u7b2c ' + (i + 1) + '\uff0f' + slides.length + ' \u9801';
+  }
+  document.getElementById('prev').addEventListener('click', function(){ show(i - 1); });
+  document.getElementById('next').addEventListener('click', function(){ show(i + 1); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight') show(i + 1);
+    if (e.key === 'ArrowLeft') show(i - 1);
+  });
+  if (slides.length) { slides[0].classList.add('active'); show(0); }
+})();
+</script>
+</body>
+</html>
