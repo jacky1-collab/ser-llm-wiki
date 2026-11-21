@@ -51,3 +51,8 @@
 
 ## Synthesis
 <!-- 5 篇跨論文綜合分析頁面（待 5 篇論文 Ingest 完畢後建立） -->
+- [[datasets-comparison]]｜資料集全景對照
+- [[benchmark-matrix]]｜評測與基準矩陣
+- [[adult-vs-child-ser]]｜成人 vs. 兒童 SER 對比
+- [[architecture-evolution]]｜特徵與模型做法對照（依 5 篇論文）
+- [[open-challenges]]｜核心挑戰與開放問題

@@ -73,3 +73,12 @@
 - wiki/entities/children-emotion-recognition.md
 - wiki/entities/pitch.md
 - wiki/entities/self-supervised-learning.md
+
+## [2026-11-21] synthesis | 建立 5 個跨論文綜合頁（格式：本頁回答的問題／主題章節／論文未涵蓋／矛盾／待釐清；每處比較前標【可比較】或【設定不同，不可直接比較：差在…】；只使用 wiki 內既有內容）
+- wiki/synthesis/datasets-comparison.md
+- wiki/synthesis/benchmark-matrix.md
+- wiki/synthesis/adult-vs-child-ser.md
+- wiki/synthesis/architecture-evolution.md
+- wiki/synthesis/open-challenges.md
+- wiki/index.md
+- wiki/log.md
