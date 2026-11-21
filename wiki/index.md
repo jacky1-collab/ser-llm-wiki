@@ -6,6 +6,7 @@
 - [[2021-pepino-wav2vec2-ser]]｜方法｜以預訓練自監督語音模型各層輸出的可訓練加權平均作為淺層神經網路的輸入進行語音情緒辨識，在 IEMOCAP 與 RAVDESS 上優於文獻中僅用聲學資訊的方法。
 - [[2016-emoreact]]｜資料集｜介紹 EmoReact：從 YouTube 反應影片蒐集、以群眾外包標註多種情感狀態的兒童視聽情緒資料集，並分析最具指標性的視覺與聲學行為、提供單模態與多模態基線。
 - [[2024-ser-evals]]｜基準評測｜提出以多語言、較少被使用的情緒語料評估語音情緒辨識模型域內與域外泛化能力的大規模基準，發現以語音辨識為主要目的的 Whisper 在跨語言情緒辨識上優於專用的自監督模型。
+- [[2026-review-ser-adults-children]]｜綜述｜回顧成人與兒童語音情緒辨識中傳統手工特徵與原始波形模型的研究，比較兩個族群的資料集、特徵與模型，並指出兒童語音情緒辨識在資料集與原始波形建模上的研究缺口。
 
 ## Entities
 <!-- 按 type 分組之實體筆記列表 -->
@@ -14,6 +15,7 @@
 <!-- type: topic -->
 - [[children-emotion-recognition]]｜兒童情緒辨識（emotion recognition in children）
 - [[self-supervised-learning]]｜自監督學習（self-supervised learning, SSL）
+- [[transfer-learning]]｜遷移學習（transfer learning）
 
 ### Emotion Taxonomies（情緒標註體系）
 <!-- type: taxonomy -->
@@ -25,10 +27,19 @@
 - [[emoreact]]｜EmoReact
 - [[iemocap]]｜IEMOCAP
 - [[msp-podcast]]｜MSP-Podcast
+- [[ravdess]]｜RAVDESS
+- [[savee]]｜SAVEE
+- [[meld]]｜MELD
+- [[mesd]]｜MESD
+- [[baum]]｜BAUM
+- [[des]]｜DES
 
 ### Features & Representations（聲學特徵）
 <!-- type: feature -->
 - [[pitch]]｜音高（pitch）
+- [[mfcc]]｜MFCC
+- [[egemaps]]｜eGeMAPS
+- [[spectrogram]]｜頻譜圖（spectrogram）
 
 ### Models & Architectures（模型與架構）
 <!-- type: model -->

@@ -1,7 +1,7 @@
 ---
 name: "pitch"
 type: feature
-sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser", "2016-emoreact"]
+sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser", "2016-emoreact", "2026-review-ser-adults-children"]
 core_contribution_of: ""
 ---
 
@@ -29,6 +29,8 @@ core_contribution_of: ""
 > "Pitch/Fundamental Frequency (F0) indicates the pitch information in one" [[2016-emoreact]] (p. 4)
 - [[2016-emoreact]] 的兒童聲學行為分析中，fear 與 disgust 出現時音高平均較高；作者解讀為較高的嗓音能量（Hedges' g 數值見 [[2016-emoreact]] 的 Table 4）：
 > "the mean of MDQ is lower and the mean of F0 is higher" [[2016-emoreact]] (p. 5)
+- [[2026-review-ser-adults-children]]：把音高列為音調描述子（tonal descriptors），並稱兒童 SER 比成人更依賴音高、能量變化與強度等特徵 [[2026-review-ser-adults-children]] (p. 6)、[[2026-review-ser-adults-children]] (p. 21)：
+> "The pitch corresponds to the perceived fundamental frequency (F0) of a speech signal." [[2026-review-ser-adults-children]] (p. 6)
 - 設定不同，不可直接比較：[[2008-fau-aibo]] 是資料庫的音高值人工校正，未做分類實驗；[[2021-pepino-wav2vec2-ser]] 是以音高解釋分類結果的假設；[[2016-emoreact]] 是以 t 檢定與效果量分析兒童視聽影片中音高與情緒出現的關聯。
 
 ## 相關實體（Related Entities）

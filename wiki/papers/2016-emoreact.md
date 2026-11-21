@@ -224,7 +224,7 @@ one_sentence_summary: "介紹 EmoReact：從 YouTube 反應影片蒐集、以群
 - OpenFace（未達建頁門檻）
 - COVAREP（未達建頁門檻）
 - 嗓音品質特徵（voice quality features：NAQ、PSP、MDQ、QOQ、H1-H2、peak-slope）（未達建頁門檻）
-- MFCC（未達建頁門檻）
+- [[mfcc]]
 - Naive Bayes、linear SVM、RBF SVM（未達建頁門檻）
 - 多數決（majority voting，本篇為基線分類器與 ensemble 整合方式）（未達建頁門檻）
 - early／late／hybrid fusion（未達建頁門檻）

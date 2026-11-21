@@ -1,7 +1,7 @@
 ---
 name: "自監督學習（self-supervised learning, SSL）"
 type: topic
-sources: ["2021-pepino-wav2vec2-ser", "2024-ser-evals"]
+sources: ["2021-pepino-wav2vec2-ser", "2024-ser-evals", "2026-review-ser-adults-children"]
 core_contribution_of: ""
 ---
 
@@ -20,6 +20,7 @@ core_contribution_of: ""
 - [[2021-pepino-wav2vec2-ser]]：以自監督預訓練的 wav2vec 2.0 作為特徵擷取器；未微調的 Wav2vec2-PT 在所有情況都優於微調做 ASR 的 Wav2vec2-FT [[2021-pepino-wav2vec2-ser]] (p. 3)。
 - [[2024-ser-evals]]：在其基準中比較 SSL 模型與 MERT、CLAP、Whisper；Whisper 在跨語言 SER 上優於專用的 SSL 模型 [[2024-ser-evals]] (p. 2)、[[2024-ser-evals]] (p. 4)。例如域外平均方面，WavLM-Large 為 0.161098 [本文] [[2024-ser-evals]] (p. 4, Table 3)，Whisper-Large 為 0.197882 [本文] [[2024-ser-evals]] (p. 4, Table 3)（macro-averaged F1）。
 - 設定不同，不可直接比較：兩篇的模型、資料集、切分與指標皆不同。
+- [[2026-review-ser-adults-children]]：把非監督與自監督學習列為兒童 SER 的未來方向，認為可從未標註資料學習，但在兒童 SER 的應用尚未被充分探索 [[2026-review-ser-adults-children]] (p. 22)。
 
 ## 相關實體（Related Entities）
 - [[wav2vec2]]

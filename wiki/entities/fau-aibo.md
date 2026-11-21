@@ -1,7 +1,7 @@
 ---
 name: "FAU Aibo Emotion Corpus"
 type: dataset
-sources: ["2008-fau-aibo"]
+sources: ["2008-fau-aibo", "2026-review-ser-adults-children"]
 core_contribution_of: "2008-fau-aibo"
 ---
 
@@ -27,6 +27,8 @@ core_contribution_of: "2008-fau-aibo"
 ## 在各論文中的應用與實驗表現
 - 在 [[2008-fau-aibo]] 中，本資料庫是該論文的核心貢獻；論文未報告分類實驗結果，僅說明將隨釋出內容提供評測設定與基準分類結果 [[2008-fau-aibo]] (p. 4)：
 > "a simple two-fold cross-validation which can be computed with rather low effort" [[2008-fau-aibo]] (p. 4)
+- [[2026-review-ser-adults-children]]：列為兒童資料集，寫作 FAU-AIBO；兒童人數 51 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)（男 21 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)／女 30 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)）、年齡 10 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3) 至 13 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)，與 [[2008-fau-aibo]] 一致。
+- 綜述轉述多篇研究在 FAU-AIBO 上的結果，例如 Latif 等人以 eGeMAPS 搭配 DBN 的準確率為 74.11% [引述] [[2026-review-ser-adults-children]] (p. 17)，Wen 等人以 RDBN 的準確率為 42.2% [引述] [[2026-review-ser-adults-children]] (p. 17)。這些是不同研究、不同切分與指標的結果，彼此設定不同，不可直接比較（切分見 [[2026-review-ser-adults-children]] 的 Table 5）[[2026-review-ser-adults-children]] (p. 18, Table 5)。
 
 ## 相關實體（Related Entities）
 無（其他相關實體目前皆未達建頁門檻，僅以純文字記於 [[2008-fau-aibo]] 的提及實體清單）。
@@ -34,3 +36,9 @@ core_contribution_of: "2008-fau-aibo"
 ## 矛盾／待釐清
 - AMEN 四類詞數 1557 [本文] [[2008-fau-aibo]] (p. 2)、1224 [本文] [[2008-fau-aibo]] (p. 2)、1645 [本文] [[2008-fau-aibo]] (p. 2)、1645 [本文] [[2008-fau-aibo]] (p. 2) 相加後，比同篇後文的 AMEN 詞數 6070 [本文] [[2008-fau-aibo]] (p. 3) 多出一個詞；論文未說明原因。
 - 含 AMEN 詞的 turn 數為 3996 [本文] [[2008-fau-aibo]] (p. 3)，turn 標籤合計為 3990 [本文] [[2008-fau-aibo]] (p. 3)；論文未說明差異原因。
+- **綜述的描述與 [[2008-fau-aibo]] 不同（並列，不選邊）**：
+  - 規模：綜述寫 17074 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3) utterances，其 Table 5 中各研究的使用量則多寫 18216 [引述] [[2026-review-ser-adults-children]] (p. 18, Table 5)；[[2008-fau-aibo]] 的全部詞數為 48401 [本文] [[2008-fau-aibo]] (p. 2)，turn 數另見上方，未出現綜述的數字。
+  - 建立年：綜述寫 2006 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)；[[2008-fau-aibo]] 寫資料於 2002 [本文] [[2008-fau-aibo]] (p. 1) 至 2004 [本文] [[2008-fau-aibo]] (p. 1) 年蒐集。
+  - 情緒數：綜述寫 10 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)；[[2008-fau-aibo]] 為 neutral 加十種其他類別 [[2008-fau-aibo]] (p. 2)。
+  - 語言：綜述稱包含德語與英語，且引用的是另一篇 Batliner 等人的論文；[[2008-fau-aibo]] 描述的是德語資料庫 [[2008-fau-aibo]] (p. 1)：
+> "Despite the inclusion of both German and English, it remains limited to these two languages" [[2026-review-ser-adults-children]] (p. 9)

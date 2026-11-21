@@ -1,7 +1,7 @@
 ---
 name: "EmoReact"
 type: dataset
-sources: ["2016-emoreact"]
+sources: ["2016-emoreact", "2026-review-ser-adults-children"]
 core_contribution_of: "2016-emoreact"
 ---
 
@@ -28,9 +28,16 @@ core_contribution_of: "2016-emoreact"
 
 ## 在各論文中的應用與實驗表現
 - [[2016-emoreact]]：以 Naive Bayes、linear SVM、RBF SVM 建立單模態與多模態基線 [[2016-emoreact]] (p. 5)。視聽特徵下 RBF SVM 的平均 AUC ROC 為 0.64 [本文] [[2016-emoreact]] (p. 6, Table 5)，隨機分類器為 0.50 [本文] [[2016-emoreact]] (p. 6, Table 5)。完整數字見 [[2016-emoreact]] 的 Table 5。
+- [[2026-review-ser-adults-children]]：列為兒童資料集；建立年 2016 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)、1102 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3) 句、63 位 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3) 兒童（男 31 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)／女 32 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)）、年齡 4 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3) 至 14 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)，與 [[2016-emoreact]] 一致。綜述未轉述在 EmoReact 上的實驗結果。
 
 ## 相關實體（Related Entities）
 - [[children-emotion-recognition]]
 
 ## 矛盾／待釐清
 - 一致性高於 0.4 [本文] [[2016-emoreact]] (p. 3) 的標籤中，Valence（0.65 [本文] [[2016-emoreact]] (p. 3)）未被選入後續使用的標籤，論文未說明原因 [[2016-emoreact]] (p. 3)。
+- **綜述的描述與 [[2016-emoreact]] 不同（並列，不選邊）**：
+  - 語言：綜述寫 German [[2026-review-ser-adults-children]] (p. 9, Table 3)；[[2016-emoreact]] 未提及語言。
+  - 情緒數：綜述寫 15 [引述] [[2026-review-ser-adults-children]] (p. 9, Table 3)；[[2016-emoreact]] 為 17 種 [本文] [[2016-emoreact]] (p. 2) 標籤。
+  - 取得方式：綜述寫 Licensed [[2026-review-ser-adults-children]] (p. 9, Table 3)；[[2016-emoreact]] 稱資料集將公開 [[2016-emoreact]] (p. 2)。
+  - 引用來源：綜述標為 Rajan 等人的文獻，該文獻標題是另一個語料庫：
+> "Design and development of a multi-lingual speech corpora (TaMaR-EmoDB) for emotion analysis." [[2026-review-ser-adults-children]] (p. 25)

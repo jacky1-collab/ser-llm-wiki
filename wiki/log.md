@@ -45,3 +45,31 @@
 ## [2026-11-21] update | 因第 4 篇回補連結與來源（wav2vec2、iemocap、msp-podcast、self-supervised-learning 達建頁門檻；emo-db 新增來源）
 - wiki/papers/2021-pepino-wav2vec2-ser.md
 - wiki/entities/emo-db.md
+
+## [2026-11-21] ingest | 2026-review-ser-adults-children（成人與兒童 SER 綜述）
+- wiki/papers/2026-review-ser-adults-children.md
+- wiki/entities/ravdess.md
+- wiki/entities/savee.md
+- wiki/entities/meld.md
+- wiki/entities/mesd.md
+- wiki/entities/baum.md
+- wiki/entities/des.md
+- wiki/entities/mfcc.md
+- wiki/entities/egemaps.md
+- wiki/entities/spectrogram.md
+- wiki/entities/transfer-learning.md
+- wiki/index.md
+- wiki/log.md
+
+## [2026-11-21] update | 因第 5 篇回補連結與來源（10 個實體達建頁門檻；7 個既有實體新增綜述來源與待釐清）
+- wiki/papers/2008-fau-aibo.md
+- wiki/papers/2021-pepino-wav2vec2-ser.md
+- wiki/papers/2016-emoreact.md
+- wiki/papers/2024-ser-evals.md
+- wiki/entities/fau-aibo.md
+- wiki/entities/emoreact.md
+- wiki/entities/emo-db.md
+- wiki/entities/iemocap.md
+- wiki/entities/children-emotion-recognition.md
+- wiki/entities/pitch.md
+- wiki/entities/self-supervised-learning.md

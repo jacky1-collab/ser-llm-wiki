@@ -154,7 +154,10 @@ one_sentence_summary: "提出以多語言、較少被使用的情緒語料評估
 - 多層感知器（MLP）（未達建頁門檻）
 - label smoothing（未達建頁門檻）
 - EMO-SUPERB、SERAB（其他 SER 基準，未達建頁門檻）
-- Table 1 中其餘資料集：URDU、EMOVO、eNTERFACE、MESD、MASC、DEMoS、CASIA、AESDD、BAUM、EEKK、Thorsten、RESD、MELD、MEAD、CaFE、Expresso、ShEMO、SUBESCO（未達建頁門檻）
+- [[mesd]]
+- [[baum]]
+- [[meld]]
+- Table 1 中其餘資料集：URDU、EMOVO、eNTERFACE、MASC、DEMoS、CASIA、AESDD、EEKK、Thorsten、RESD、MEAD、CaFE、Expresso、ShEMO、SUBESCO（未達建頁門檻）
 
 ## 矛盾／待釐清
 1. **URDU 與 AESDD 的域外泛化說法（論文內部，待核對）**：作者稱模型對 URDU 與 AESDD 泛化最好 (p. 3)，但 Table 1 標示這兩個資料集不具域外資格 (p. 1, Table 1)，Fig. 3 列出的資料集也不含這兩者 (p. 4, Fig. 3)。論文未說明這兩個資料集的域外表現從何而來。並列原文：

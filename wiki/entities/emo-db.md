@@ -1,7 +1,7 @@
 ---
 name: "Emo-DB"
 type: dataset
-sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser", "2024-ser-evals"]
+sources: ["2008-fau-aibo", "2021-pepino-wav2vec2-ser", "2024-ser-evals", "2026-review-ser-adults-children"]
 core_contribution_of: ""
 ---
 
@@ -29,10 +29,12 @@ core_contribution_of: ""
 - [[2021-pepino-wav2vec2-ser]]：僅在引言中列為訓練與評估情緒辨識模型的資料集之一，未用於該篇實驗 [[2021-pepino-wav2vec2-ser]] (p. 1)。
 - [[2024-ser-evals]]：列為基準資料集之一（德語）；類別對應後為 6 類 [本文] [[2024-ser-evals]] (p. 1, Table 1)、10 位說話者 [本文] [[2024-ser-evals]] (p. 1, Table 1)、535 個樣本 [本文] [[2024-ser-evals]] (p. 1, Table 1)，平均長度 2.8 秒 [本文] [[2024-ser-evals]] (p. 1, Table 1)；不具域外資格，只用於域內測試 [[2024-ser-evals]] (p. 1, Table 1)、[[2024-ser-evals]] (p. 3)。該篇只報告跨資料集彙總指標，未列出 Emo-DB 單一資料集的結果 [[2024-ser-evals]] (p. 4, Table 3)。
 > "A database of german emotional speech." [[2024-ser-evals]] (p. 5)
-- [[2008-fau-aibo]] 與 [[2021-pepino-wav2vec2-ser]] 皆未報告 Emo-DB 的統計或實驗數據，因此三篇之間沒有可對照的數字。
+- [[2008-fau-aibo]] 與 [[2021-pepino-wav2vec2-ser]] 皆未報告 Emo-DB 的統計或實驗數據。
+- [[2026-review-ser-adults-children]]：列為成人資料集；綜述轉述建立年 2005 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2)、535 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2) 句、德語、10 位 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2) 說話者（男 5 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2)／女 5 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2)）、7 種 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2) 情緒、可免費取得。樣本數與說話者數和 [[2024-ser-evals]] 一致；可免費取得與 [[2008-fau-aibo]] 的「(freely) available」說法一致。
 
 ## 相關實體（Related Entities）
 無（其他相關資料集目前皆未達建頁門檻）。
 
 ## 矛盾／待釐清
-無（三篇只有名稱寫法不同：Emo-DB、EMODB、EmoDB／EmoDBDataset，引用文獻皆為 Burkhardt 等人的「A database of german emotional speech」）。
+- 名稱寫法不同：Emo-DB、EMODB、EmoDB／EmoDBDataset；各篇引用文獻皆為 Burkhardt 等人的「A database of german emotional speech」。
+- 情緒數：綜述轉述為 7 [引述] [[2026-review-ser-adults-children]] (p. 7, Table 2) 種；[[2024-ser-evals]] 類別對應後為 6 類 [本文] [[2024-ser-evals]] (p. 1, Table 1)。設定不同（原始文獻 vs. 類別對應後），不可直接比較。
