@@ -26,6 +26,8 @@ one_sentence_summary: "介紹 EmoReact：從 YouTube 反應影片蒐集、以群
 > "the lack of publicly available datasets for children with annotated emotion labels leads most researchers to focus on adults" (p. 1)
 - 作者列出三項挑戰：快速動作、臉部遮擋、缺乏資源 (p. 2)：
 > "There are few publicly available datasets of children; only one contains videos and all other ones contain only images." (p. 2)
+- 其中關於快速動作的挑戰 (p. 2)：
+> "Children move more compared to adults, which makes it challenging to successfully track their face and body gestures." (p. 2)
 - 現有唯一含影片的兒童資料集 MMDB 以幼兒為對象，作者認為難以分析語音通道 (p. 2)：
 > "as the subjects are toddlers, this makes it hard to analyze the vocal channel due to their very limited vocabularies" (p. 2)
 - 部分現有資料集要求兒童擺出指定表情 (p. 2)：

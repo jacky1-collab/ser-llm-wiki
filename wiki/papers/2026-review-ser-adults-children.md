@@ -18,10 +18,13 @@ one_sentence_summary: "回顧成人與兒童語音情緒辨識中傳統手工特
 - **原始檔案**：raw/2026-review-ser-adults-children.pdf
 
 ## 研究動機與欲解決問題（Problem & Motivation）
+- 作者指出 SER 因在人機互動、情感運算與心理健康上的廣泛應用，已成為重要的研究領域 (p. 1)：
+> "Speech emotion recognition (SER) has become an important area of research due to its wide applications in human-computer interaction, affective computing, and mental health." (p. 1)
 - 現有 SER 研究大多集中於成人，兒童受到的關注有限 (p. 1)：
 > "most existing studies focus heavily on adults, with limited attention given to children" (p. 1)
 - 作者認為兒童情緒偵測有獨特挑戰：標註資料有限、聲音模式持續變化、兒童情緒的動態性 (p. 1)。
-- 作者認為兒童的情緒範圍較窄且變異較大，受年齡、語言發展與文化影響；加上隱私與同意等倫理要求，難以建立標準化資料集 (p. 2)。
+- 作者認為兒童的情緒範圍較窄且變異較大，受年齡、語言發展與文化影響；加上隱私與同意等倫理要求，難以建立標準化資料集 (p. 2)：
+> "children display a narrower and more variable range of emotions, shaped by age, linguistic development, and cultural context" (p. 2)
 - 作者歸納兒童 SER 的其他挑戰：音高、音色、音量差異，常見發音錯誤與不完整句子，重疊的聲學模式（如 happiness vs. excitement），快速的情緒轉換，以及強烈的說話者依賴性 (p. 2)。
 - 作者指出現有研究較少處理三個面向：自然或吵雜環境下的穩健性、多模態分析、聲學與語言資訊融合；這些在兒童研究中尤其缺乏 (p. 2)。
 - 作者認為先前的綜述沒有一篇同時統整成人與兒童的傳統特徵與原始波形方法 (p. 3)。

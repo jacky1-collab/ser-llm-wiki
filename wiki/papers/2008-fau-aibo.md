@@ -132,6 +132,8 @@ one_sentence_summary: "介紹 FAU Aibo Emotion Corpus：德國兒童與 Sony Aib
 - [作者聲稱] 帶有校正音高值的資料庫很少，作者不知道有其他情緒資料庫具備這種校正值 (p. 3)。
 - [作者聲稱] chunk 在句法上（因而在語意上）有明確定義，作者認為 chunk 是較理想的單位 (p. 3)。
 - [作者聲稱] 依作者經驗，方便的子樣本選擇對分類效能的影響常大於特徵選擇程序或分類器的選擇，因此需要基準設定 (p. 4)。
+- [作者聲稱] 兒童作為早期採用者，是自動情緒建模的合理對象；作者認為兒童可能有群體特有的傾向，但沒有跡象顯示其行為與成人有根本差異 (p. 2)：
+> "there is no indication that they behaved differently from adults in a fundamental way" (p. 2)
 - [作者聲稱] 自動情緒分類領域仍在起步階段，作者期望以此資料庫的基準設定形成「islands of standardization」(p. 4)。
 
 ## 論文提及之局限性（Limitations & Future Work）

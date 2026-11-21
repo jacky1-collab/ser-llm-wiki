@@ -82,3 +82,9 @@
 - wiki/synthesis/open-challenges.md
 - wiki/index.md
 - wiki/log.md
+
+## [2026-11-21] update | 因簡報需要，補記論文頁引文（原文先前只記在實體頁／綜合頁，簡報無法以引文呈現）
+- wiki/papers/2026-review-ser-adults-children.md
+- wiki/papers/2008-fau-aibo.md
+- wiki/papers/2016-emoreact.md
+- wiki/log.md
