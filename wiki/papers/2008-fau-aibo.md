@@ -158,7 +158,7 @@ one_sentence_summary: "介紹 FAU Aibo Emotion Corpus：德國兒童與 Sony Aib
 - [[emo-db]]
 - DES（未達建頁門檻）
 - 綠野仙蹤法（Wizard-of-Oz）（未達建頁門檻）
-- 兒童語音（children's speech）（未達建頁門檻）
+- [[children-emotion-recognition]]（本篇寫作 children's speech）
 - [[pitch]]（另提及音高偵測演算法（PDA），未達建頁門檻）
 - two-fold cross-validation（未達建頁門檻）
 - 以詞為單位的情緒標註（word-based annotation）（未達建頁門檻）

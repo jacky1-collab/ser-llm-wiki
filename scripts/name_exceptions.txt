@@ -8,3 +8,14 @@
 wav2vec 2.0
 Wav2vec2-PT
 Wav2vec2-FT
+H1-H2
+H1H2
+F0
+F1
+MFCC 3
+MFCC 10
+MFCC 14
+MFCC 15
+MFCC 21
+Non-rigid P 8
+Non-rigid P 22
